@@ -1,31 +1,371 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  /* font-family: 'Poppins', sans-serif; */
+  /* background-color: #202142; */
+  color: #fff;
+  line-height: 1.2;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ul {
+  list-style: none;
+  margin: 8px 8px 8px 8px;
+  color: rgb(0, 0, 0);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a {
+  font-family: 'Lato', sans-serif;
+}
+
+.container {
+  max-width: 768px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.container-table {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  width: 100%;
+  padding-right: calc(1.5rem * 0.5);
+  padding-left: calc(1.5rem * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 80px;
+}
+
+header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+table{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,th{
+  border-bottom:1px #dddddd solid;
+  text-align: left;
+  padding: 8px;
+}
+
+.striped:nth-child(even){
+  background-color: #dddddd;
+}
+.hover:hover{
+  background-color: #61dafb;
+}
+
+.card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-between;
+  /* width: 50%; */
+  background-color: #fff;
+  color: #333;
+  border-radius: 15px;
+  padding: 20px 50px;
+  margin: 20px;
+  /* margin-left: auto; */
+  /* margin-left: 250px; */
+  /* position: relative; */
 }
 
-.App-link {
-  color: #61dafb;
+.card.reverse {
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+
+.card h2 {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(43, 19, 0);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.card-btn {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* pages: */
+.products {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.home,
+.ideas,
+.metamodelconf,
+.apiquery,
+.team,
+.about,
+.moi {
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.home p,
+.ideas p,
+.metamodelconf p,
+.apiquery p,
+.team p,
+.about p,
+.moi p {
+  display: flex;
+  color: rgb(0, 0, 0);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.home h1,
+.ideas h1,
+.metamodelconf h1,
+.apiquery h1,
+.team h1,
+.about h1,
+.moi h1 {
+  display: flex;
+  color: rgb(245, 10, 10);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.apiquery h4 {
+  display: flex;
+  color: rgb(224, 0, 0);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+[type='radio'] {
+  opacity: 0;
+}
+
+[type='radio']:checked ~ label {
+  background: #ff6a95;
+  color: #fff;
+}
+
+.output-group {
+  display: flex;
+  align-items: center;
+  /* flex-direction: row; */
+  justify-content: center;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin: 8px 0 8px 0;
+}
+
+input {
+  flex-grow: 2;
+  border: none;
+  font-size: 16px;
+  width: 240px;
+  /* height: 30px; */
+  padding: 4px 8px;
+  margin-right: 20px;
+  /* margin-top: 18px; */
+}
+
+input:focus {
+  outline: none;
+}
+
+.num-display {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+}
+
+.close,
+.edit {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.edit {
+  right: 40px;
+}
+
+.btn {
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.btn-primary {
+  background-color: #202142;
+}
+
+.btn-secondary {
+  background: #ff6a95;
+}
+
+.btn:hover {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.btn:disabled {
+  background-color: #cccccc;
+  color: #333;
+  cursor: auto;
+}
+
+.btn:disabled:hover {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.message {
+  padding-top: 10px;
+  text-align: center;
+  color: rebeccapurple;
+}
+
+/* .about {
+  align-items: left;
+  justify-content: left;
+  margin-top: 20px;
+  margin-left: 20px;
+} */
+
+/* FIX: Remove position: absolute to keep about icon at the bottom of the
+ * document */
+ .about-link {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* FIX: Remove position: absolute to keep about icon at the bottom of the
+ * document */
+.about-link a {
+  color: #fff;
+  cursor: pointer;
+}
+
+.about-link a:hover {
+  color: #ff6a95;
+}
+
+/* .about h1 {
+  margin-bottom: 20px;
+}
+.about p {
+  margin: 10px 0;
+} */
+
+
+.text-link,
+.text-link-invert {
+  display: flex;
+  justify-content: center;
+  color: inherit;
+  text-decoration: inherit;
+}
+.text-link a {
+  color: rgb(92, 6, 253);
+  cursor: pointer;
+  text-decoration: none;
+}
+.text-link-invert a {
+  color: rgb(102, 0, 17);
+  cursor: pointer;
+  text-decoration: none;
+}
+.text-link a:visited {
+  text-decoration: none;
+  color: rgb(85, 3, 236);
+}
+.text-link-invert a:visited {
+  text-decoration: none;
+  color: rgb(85, 3, 236);
+}
+.text-link a:hover {
+  color: #6100a1;
+}
+.text-link-invert a:hover {
+  color: #6100a1;
+}
+.text-link a:active {
+  text-decoration: none;
+}
+.text-link-invert a:active {
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .rating li {
+    margin: 10px 3px;
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0 40px;
+  }
+
+  .input-group input {
+    width: 80%;
+  }
+  .output-group input {
+    width: 80%;
+  }
 }
 
 @keyframes App-logo-spin {
