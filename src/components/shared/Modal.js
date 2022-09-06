@@ -3,6 +3,7 @@ import React, { useRef, useEffect, useCallback } from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import Table from '../../components/shared/Table';
+import TableData from '../../components/shared/TableData';
 
 const Background = styled.div`
   ${'' /* width: 100%;
@@ -67,13 +68,13 @@ const CloseModalButton = styled(MdClose)`
   z-index: 10;
 `;
 
-export const Modal = ({ showModal, setShowModal, data }) => {
+export const Modal = ({ showModal, setShowModal, data, columns, table }) => {
   const modalRef = useRef();
 
-  const columns = [
-    { field: "id", header: "#" },
-    { field: "title", header: "Title" },
-  ];
+  // const columns = [
+  //   { field: "id", header: "#" },
+  //   { field: "title", header: "Title" },
+  // ];
 
   // const animation = useSpring({
   //   config: {
@@ -121,7 +122,9 @@ export const Modal = ({ showModal, setShowModal, data }) => {
                     ))}
                   </ul>
                 </div> */}
-                <Table data={data} columns={columns} hover={true} striped={true} />
+                {table ? <Table data={data} columns={columns} hover={true} striped={true} /> : <TableData data={data} columns={columns} hover={true} striped={true} /> }
+                {/* <Table data={data} columns={columns} hover={true} striped={true} /> */}
+
                 {/* <button>Do smth</button> */}
               </ModalContent>
               <CloseModalButton
@@ -135,3 +138,10 @@ export const Modal = ({ showModal, setShowModal, data }) => {
     </>
   );
 };
+
+/**
+ * usage of component
+ * eg:
+ * <Modal showModal={showModal} setShowModal={setShowModal} data={data} columns={columns} table={false} />
+ * <Modal showModal={showModal} setShowModal={setShowModal} data={dataFetch} columns={columns} table={true}/>
+ */

@@ -24,6 +24,13 @@ a {
   font-family: 'Lato', sans-serif;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1rem;
+}
+
 .container {
   max-width: 768px;
   margin: auto;
@@ -61,6 +68,102 @@ td,th{
   border-bottom:1px #dddddd solid;
   text-align: left;
   padding: 8px;
+}
+/* table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #ffffff;
+  text-align: left;
+  padding: 8px;
+  font-size: 32px;
+}
+
+th {
+  background-color: rgb(117, 201, 250);
+}
+
+td {
+  background-color: rgb(205, 235, 253);
+} */
+
+dynamic-table {
+  border-collapse: collapse;
+  max-width: 900px;
+  width: 100%;
+  margin: 2rem auto;
+}
+dynamic-table th, dynamic-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.content-table {
+  border-collapse: collapse;
+  /* table-layout:fixed; */
+  width:100%;
+  margin: 25px 0;
+  font-size: 0.9em;
+  /* min-width: 400px; */
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  padding: 0 25px 50px 25px;
+}
+
+.content-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #c0bbbb;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.content-table tbody tr.active-row {
+  /* font-weight: bold; */
+  /* color: #009879; */
+  color: #000000;
+  /* margin: 25px, 25px; */
+}
+.content-table tbody tr.readonly-row {
+  /* font-weight: bold; */
+  color: #009879;
+  padding: 1px 0;
+  margin: 25px, 125px;
+}
+
+form {
+  display: flex;
+  gap: 25px;
+}
+
+form td:last-child {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px 0;
+}
+
+form * {
+  font-size: 18px;
 }
 
 .striped:nth-child(even){
@@ -106,6 +209,15 @@ td,th{
   margin-bottom: 10px;
 }
 
+.card h4 {
+  color: #009879;
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
 .card-btn {
   font-size: 22px;
   font-weight: 600;
@@ -123,7 +235,7 @@ td,th{
 
 .home,
 .ideas,
-.metamodelconf,
+.mmcustomizer,
 .apiquery,
 .team,
 .about,
@@ -136,7 +248,7 @@ td,th{
 
 .home p,
 .ideas p,
-.metamodelconf p,
+.mmcustomizer p,
 .apiquery p,
 .team p,
 .about p,
@@ -150,7 +262,7 @@ td,th{
 
 .home h1,
 .ideas h1,
-.metamodelconf h1,
+.mmcustomizer h1,
 .apiquery h1,
 .team h1,
 .about h1,
@@ -177,6 +289,65 @@ td,th{
 [type='radio']:checked ~ label {
   background: #ff6a95;
   color: #fff;
+}
+
+input[type="file"] {
+  display: none;
+  /* color: black; */
+}
+
+.custom-file-upload {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.custom-file-upload-reverse {
+  background: #ff6a95;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+
+.content-box {
+  width: 450px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid #c3c3c3; */
+  /* margin: 1px 1px; */
+}
+
+.box-row {
+  /* width: 250px; */
+  height: 50px;
+  flex-direction: row;
+}
+.box {
+  width: 250px;
+  height: 50px;
+  margin: 5px 5px;
+}
+.box-rev {
+  color: #000000;
+  /* width: 250px; */
+  height: 50px;
+  margin: 5px 5px;
+}
+#col-rev {
+  flex-direction: column-reverse;
+}
+#row {
+  flex-direction: row;
+}
+#row-rev {
+  flex-direction: row-reverse;
 }
 
 .output-group {
@@ -211,6 +382,18 @@ input {
   /* margin-top: 18px; */
 }
 
+.input-crud {
+  flex-grow: 2;
+  border: none;
+  font-size: 16px;
+  /* width: 240px; */
+  width: 100%;
+  /* height: 30px; */
+  padding: 4px 8px;
+  margin-right: 20px;
+  /* margin-top: 18px; */
+}
+
 input:focus {
   outline: none;
 }
@@ -233,6 +416,17 @@ input:focus {
 
 .edit {
   right: 40px;
+}
+
+.btn-crud {
+  background-color: #202142;
+  color: #fff;
+  border: 0;
+  border-radius: 8px;
+  width: 60px;
+  height: 32px;
+  cursor: pointer;
+  margin: 0 2px 1px 1px;
 }
 
 .btn {

@@ -18,6 +18,11 @@ const Container = styled.div`
   height: 5vh;
 `;
 
+const columns = [
+  { field: "id", header: "#" },
+  { field: "title", header: "Title" },
+];
+
 // const Button = styled.button`
 //   min-width: 100px;
 //   padding: 16px 32px;
@@ -137,7 +142,7 @@ function APIquery() {
           {/* Modal popup */}
           <Container>
             <Button onClick={openModal}>Show result</Button>
-            <Modal showModal={showModal} setShowModal={setShowModal} data={dataFetch} />
+            <Modal showModal={showModal} setShowModal={setShowModal} data={dataFetch} columns={columns} table={true}/>
             <GlobalStyle />
           </Container>
 

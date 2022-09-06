@@ -23,9 +23,7 @@ function Navbar() {
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
 
-          {/* <img src={bocLogo} alt="Logo" />; */}
-          {/* <p className="navbar-info">Powerd by SOL</p> */}
-
+          <p className="navbar-info">Powerd by SOL</p>
           <div className="boc-logo-image">
             {/* Logo is an actual React component */}
             <Logo />

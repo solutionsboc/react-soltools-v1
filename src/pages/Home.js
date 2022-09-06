@@ -7,16 +7,22 @@ function Home() {
       <h1>SOL React Projects</h1>
       <Card reverse={true}>
         <p>This is a React app for SOL services</p>
-        <p>Version: 1.0.0</p>
+        <p>Version: 0.1.0</p>
+        <p>Current state: Development Playground</p>
         <div className="text-link-invert">
           <p>
             <a target="_blank" href="https://confluence.boc-group.com/display/STA/React+SOL+tools" rel="noreferrer">Link to confluence page</a>
           </p>
         </div>
+        <div className="text-link-invert">
+          <p>
+            <a target="_blank" href="http://soltools:7080/react-soltools-v1" rel="noreferrer">Deployed version</a>
+          </p>
+        </div>
       </Card>
       <Card reverse={true}>
       <p>Repository of this project</p>
-      <p>(tbd)</p>
+      <p>(todo: make private)</p>
       <div className="text-link">
         <p>
           <a target="_blank" href="https://github.com/solutionsboc/react-soltools-v1" rel="noreferrer">Git Repo</a>

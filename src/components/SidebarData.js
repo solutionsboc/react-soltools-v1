@@ -11,8 +11,8 @@ export const SidebarData = [
     cName: 'nav-text'
   },
   {
-    title: 'Metamodel Conf',
-    path: '/METAMODELCONF/metamodelconf',
+    title: 'MM Customizer',
+    path: '/MMCUSTOMIZER/mmcustomizer',
     icon: <IoIcons.IoMdCreate />,
     cName: 'nav-text'
   },

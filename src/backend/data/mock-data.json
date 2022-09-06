@@ -1,0 +1,9 @@
+[
+  {
+    "name": "DAK",
+    "topic": "Database",
+    "description": "define db if needed",
+    "input": "Realm, Firebase, SQLite, MongoDB, Back4App or other",
+    "contributer": "you as contributer"
+  }
+]

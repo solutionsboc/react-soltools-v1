@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import MetamodelConf from './pages/METAMODELCONF/MetamodelConf';
+import MmCustomizer from './pages/MMCUSTOMIZER/MmCustomizer';
 import Ideas from './pages/Ideas';
 import Moi from './pages/MOI/Moi';
 import APIquery from './pages/APIQUERY/APIquery';
@@ -13,11 +13,11 @@ import About from './pages/About';
 function App() {
   return (
     <>
-      <Router>
+      <Router basename='/react-soltools-v1'>
         <Navbar />
         <Routes>
           <Route path='/' exact element={<Home />} />
-          <Route path='/METAMODELCONF/MetamodelConf' element={<MetamodelConf />} />
+          <Route path='/MMCUSTOMIZER/mmcustomizer' element={<MmCustomizer />} />
           <Route path='/ideas' element={<Ideas />} />
           <Route path='/MOI/moi' element={<Moi />} />
           <Route path='/APIQUERY/apiquery' element={<APIquery />} />
