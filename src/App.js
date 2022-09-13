@@ -7,7 +7,7 @@ import MmCustomizer from './pages/MMCUSTOMIZER/MmCustomizer';
 import Ideas from './pages/Ideas';
 import Moi from './pages/MOI/Moi';
 import APIquery from './pages/APIQUERY/APIquery';
-import Team from './pages/Team';
+// import Team from './pages/Team';
 import About from './pages/About';
 
 function App() {

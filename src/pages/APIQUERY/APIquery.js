@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import DataContext from "./DataContext";
+// import {decode as base64_decode, encode as base64_encode} from 'base-64';
+// import DataContext from "./DataContext";
 import UseFetch from './UseFetch';
 import useFetchData from './useFetchData';
 import Button from '../../components/shared/Button';
@@ -10,6 +11,7 @@ import '../../components/shared/Modal.css';
 import styled from 'styled-components';
 import { Modal } from '../../components/shared/Modal';
 import { GlobalStyle } from '../../components/shared/globalStyles';
+import Adonis from './components/Adonis';
 
 const Container = styled.div`
   display: flex;
@@ -33,6 +35,7 @@ const columns = [
 //   font-size: 24px;
 //   cursor: pointer;
 // `;
+
 
 function refreshPage() {
   window.location.reload(false);
@@ -89,13 +92,6 @@ function APIquery() {
   }
 
 
-  function HandleUseFetchData() {
-    var t = "tt";
-    // setUseFetchData(useFetchData("https://jsonplaceholder.typicode.com/todos"));
-    // const dataFetch = useFetchData("https://jsonplaceholder.typicode.com/todos");
-  }
-
-
   if (errorUrl) {
     console.log("APIquery errorUrl:");
     console.log(errorUrl);
@@ -125,11 +121,6 @@ function APIquery() {
 
         <Card reverse={true}>
           <p>dataFetch Example: "https://jsonplaceholder.typicode.com/todos"</p>
-          {/* <button onClick={HandleUseFetchData}>Click</button> */}
-          {/* <button className='btn btn-secondary' onClick={() => HandleUseFetchData}>{loading ? 'Loading…' : 'Refetch'}</button> */}
-
-          {/* <useFetchData url="https://jsonplaceholder.typicode.com/posts"/> */}
-
 
           <div className="input-group">
             <input onChange={handleUrlChange} type="text" placeholder="insert URL" value={url} />
@@ -164,9 +155,19 @@ function APIquery() {
         {/* <div className="output-group">
           <p>{data?.setup} : {data?.delivery}</p>
         </div> */}
+
+
+         {/* TODO Adonis REST */}
+        <Card reverse={true}>
+        <p>https://developer.boc-group.com/adoxx/en/API-Guide/</p>
+          <Adonis/>
+        </Card>
+
       </div>
     );
   }
+
+
 
   // if (!dataFetch) {
   //   return (

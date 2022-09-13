@@ -2,21 +2,19 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import axios from "axios";
 
-function useFetchData(fetchData) {
-  // const [dataFetch, setData] = useState(null);
+function useFetchData(url) {
   const [dataFetch, setData] = useState([]);
   const [loadingUrl, setLoading] = useState(false);
   const [errorUrl, setError] = useState(null);
-  const aUrl = fetchData;
 
-  if (aUrl) {
-    console.log("UseFetch aUrl:\n" + aUrl);
+  if (url) {
+    console.log("UseFetch url:\n" + url);
   }
 
   useEffect(() => {
     setLoading(true);
     axios
-      .get(aUrl)
+      .get(url)
       .then((res) => {
         setData(res.data);
       })
@@ -27,12 +25,12 @@ function useFetchData(fetchData) {
       .finally(() => {
         setLoading(false);
       });
-  }, [aUrl]);
+  }, [url]);
 
   const refetchUrl = () => {
     setLoading(true);
     axios
-      .get(aUrl)
+      .get(url)
       .then((res) => {
         setData(res.data);
       })
@@ -56,8 +54,8 @@ function useFetchData(fetchData) {
   //   </div>)
 }
 
-// useFetchData.propTypes = {
-//   fetchData: PropTypes.string,
-// }
+useFetchData.propTypes = {
+  url: PropTypes.string,
+}
 
 export default useFetchData;

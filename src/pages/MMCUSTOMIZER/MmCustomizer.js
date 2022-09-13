@@ -103,34 +103,29 @@ function MmCustomizer() {
     }
   }
 
+  // axl Library files handler
+  // TODO 
   function handleLibraryFile(file) {
     /* set up FileReader */
     const reader = new FileReader();
-    
-    const rABS = !!reader.readAsBinaryString;
-    // const rABS = false;
-    reader.onload = e => {
-      /* Parse data */
-      const bstr = e.target.result;
-      const wb = XLSX.read(bstr, { type: rABS ? "binary" : "array" });
-      /* Get first worksheet */
-      const wsname = wb.SheetNames[0];
-      const ws = wb.Sheets[wsname];
-      console.log("handleFile");
-      console.log(rABS, wb);
-      /* Convert array of arrays */
-      const dataXlsx = XLSX.utils.sheet_to_json(ws, { header: 1 });
-      /* Update state */
-      setData(dataXlsx);
-      setColumns(make_cols(ws["!ref"]));
-      // this.setState({ data: dataXlsx, cols: make_cols(ws["!ref"]) });
-    };
-    if (file) {
-      if (rABS) reader.readAsBinaryString(file);
-      else reader.readAsArrayBuffer(file);
-    } else {
-      console.log('No file to read!');
-    }
+
+    const zip = require('jszip')();
+    zip.file(file.name, file);
+
+    let contents = [];
+
+    zip.loadAsync({type: "blob"})
+    .then(function(zip) {
+      console.log(zip)
+        // you now have every files contained in the loaded zip
+        // zip.file("hello.txt").async("string");
+    });
+
+    zip.generateAsync({type: "blob"})
+    .then(content => {
+      // data is Uint8Array { 0=72, 1=101, 2=108, more...}
+      console.log(content)
+    });
   }
 
   

@@ -4,7 +4,7 @@ import Card from '../components/shared/Card';
 function Home() {
   return (
     <div className='home'>
-      <h1>SOL React Projects</h1>
+      <h1>SOL React Services</h1>
       <Card reverse={true}>
         <p>This is a React app for SOL services</p>
         <p>Version: 0.1.0</p>
